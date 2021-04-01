@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WAPP autosalone : stato dell'arte</title>
+	<style>
+		body {
+			background-color:#ffffff;
+		}
+		div {
+			background-color:#dddddd;
+			border: 1px solid #000000;
+			margin:10px;
+		}
+		div div {
+			border: 1px solid #000000;
+			margin:5px;
+		}
+		.statoF {
+			background-color:#ff0000;
+		}
+		.statoD {
+			background-color:#00ff00;
+		}
+		.statoT {
+			background-color:#ffff00;
+		}
+	</style>
+</head>
+<body>
+Versione 0.0.7 del 1° Aprile 2021
+<div>
+	LEGENDA
+	<div class="statoF">F: Focus On (il presente -> QUANDO INTERROGO, CHIEDO DI REALIZZARE QUESTO)</div>
+	<div class="statoT">T: Todo (il futuro -> LO FAREMO INSIEME, A SUO TEMPO. O POTREI CHIEDERLO ALL'INTERROGAZIONE)</div>
+	<div class="statoD">D: Done (il passato -> SE NON AVETE QUESTE COSE PRONTE, E' UN PROBLEMA)</div>
+</div>
+
+<div>
+	FRONT-END
+	<div class="statoF">F: pulsante logout -> unset($_SESSION["pkf"]);</div>
+	<div class="statoF">F: tabelle as_registrati con flag is_enabled 0/1 : se il flag vale 0, il login deve FALLIRE (l'utente è non abilitato)</div>
+	<div class="statoT">T: ricerca "semplice" per tutti (singola casella di testo)</div>
+	<div class="statoT">T: ricerca "avanzata" per chi è logato (più elementi di ricerca, range, tendine, etc..)</div>
+	<div class="statoT">T: invio email di richiesta info di una specifica auto a mario@molfese.net (solo per chi è logato)</div>
+	<div class="statoT">T: form di registrazione con link di conferma tramite email</div>
+	<div class="statoD">D: /wapp/autosalone/index.php - login as_registrati (email/password) e mostrare auto (a chi è logato anche l'anno)</div>
+	<div class="statoD">D: tabella as_registrati per il front-end</div>
+</div>
+
+<div>
+	BACK-END
+	<div class="statoF">F: pulsante logout -> unset($_SESSION["pkb"]);</div>
+	<div class="statoF">F: creazione di header.php con testata di navigazione comune a tutti gli utenti, UL/LI di puntatori a CRUD marche modelli automobili</div>
+	<div class="statoF">F: /wapp/autosalone/admin/crud_marche.php con cestino embedded e link verso insert_marche.php che, in caso di pk passato get, agirà come update</div>
+	<div class="statoT">T: /wapp/autosalone/admin/crud_modelli.php con cestino embedded e link verso insert_modelli.php che, in caso di pk passato get, agirà come update</div>
+	<div class="statoT">T: /wapp/autosalone/admin/crud_automobili.php con cestino embedded e link verso insert_automobili.php che, in caso di pk passato get, agirà come update</div>
+	<div class="statoT">T: tabelle as_utenti con flag is_enabled 0/1 : se il flag vale 0, il login deve FALLIRE (l'utente è non abilitato)</div>
+	<div class="statoT">T: gestione immagine automobili e marche</div>
+	<div class="statoT">T: le pagine del back-end non devono poter essere visualizzate da chi non è logato (if SULLA $_SESSION)</div>
+	<div class="statoD">D: /wapp/autosalone/admin/index.php - login as_utenti (email/password) e mostrare crud marche modelli automobili utenti</div>
+</div>
+
+
+</body>
+</html>
