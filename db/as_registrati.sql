@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS `as_registrati` (
   `cognome` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `email` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `registrazione` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `is_enabled` tinyint(4) NOT NULL DEFAULT '1',
   `note` text CHARACTER SET utf8,
   PRIMARY KEY (`pk`)
